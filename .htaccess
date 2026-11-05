@@ -1,0 +1,18 @@
+RewriteEngine On
+RewriteBase /
+
+# Block sensitive files
+RewriteRule ^\.env$ - [F,L]
+RewriteRule ^\.git - [F,L]
+
+# Clean profile URLs (e.g. /profile/courses -> /profile/courses.php)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+RewriteRule ^(profile/[a-zA-Z0-9_\-]+)$ $1.php [L,QSA]
+
+# Проверка на существование файла и папки, чтобы избежать ошибок 404
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Руло для перенаправления
+RewriteRule ^account/([a-z0-9\-]+)$ /account/index.php?slug=$1 [L,QSA]

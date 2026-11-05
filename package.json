@@ -1,0 +1,20 @@
+{
+  "name": "iq-creative-demo",
+  "version": "1.0.0",
+  "description": "IQ-CREATIVE is a web-based learning management platform for schools, tutoring centers, and exam preparation courses. It provides students with courses, video lessons, daily and weekly tests, progress tracking, and a leaderboard — all managed through an admin panel.",
+  "main": "server-worker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@playwright/test": "^1.62.1"
+  },
+  "devDependencies": {
+    "@midscene/web": "^1.12.2",
+    "dotenv": "^17.4.2"
+  }
+}

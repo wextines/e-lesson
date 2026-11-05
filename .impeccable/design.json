@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-02T00:00:00Z",
+  "title": "Design System: e-Lesson Platform Marketing Homepage",
+  "extensions": {
+    "colorMeta": {
+      "accent": { "role": "primary", "displayName": "Signal Teal", "canonical": "#0e9f8e", "tonalRamp": ["#062e29", "#0a4a42", "#0b7f72", "#0e9f8e", "#2bb3a3", "#5cc9bc", "#9bdfd5", "#e3f6f3"] },
+      "ink": { "role": "neutral", "displayName": "Near-Black Ink", "canonical": "#0b1220", "tonalRamp": ["#05070c", "#0b1220", "#1c2638", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1"] },
+      "paper": { "role": "neutral", "displayName": "Cool Paper", "canonical": "#f6f8f9", "tonalRamp": ["#0a1018", "#1c242c", "#475569", "#94a3b8", "#cbd5e1", "#e2e8ec", "#eef3f3", "#f6f8f9"] },
+      "footer-bg": { "role": "neutral", "displayName": "Footer Ink", "canonical": "#0a1018" },
+      "tile-blue": { "role": "tertiary", "displayName": "Tile Blue", "canonical": "#2563eb" },
+      "tile-amber": { "role": "tertiary", "displayName": "Tile Amber", "canonical": "#b45309" },
+      "tile-rose": { "role": "tertiary", "displayName": "Tile Rose", "canonical": "#be123c" },
+      "tile-violet": { "role": "tertiary", "displayName": "Tile Violet", "canonical": "#6d28d9" },
+      "tile-slate": { "role": "tertiary", "displayName": "Tile Slate", "canonical": "#475569" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display (Unbounded)", "purpose": "Hero h1, section h2 headlines, wordmark only. Never UI chrome or body copy." },
+      "body": { "displayName": "Body (Inter)", "purpose": "All paragraph copy, nav, buttons, inputs, labels." }
+    },
+    "shadows": [
+      { "name": "ambient-small", "value": "0 2px 8px -2px rgba(11,18,32,0.08), 0 1px 3px rgba(11,18,32,0.06)", "purpose": "Resting state for feature cards and primary buttons." },
+      { "name": "ambient-medium", "value": "0 20px 40px -20px rgba(11,18,32,0.22), 0 6px 16px -8px rgba(11,18,32,0.1)", "purpose": "Hover lift on feature cards, floating chips, showcase media." },
+      { "name": "ambient-large", "value": "0 32px 64px -24px rgba(11,18,32,0.28)", "purpose": "Hero browser-frame and lead-capture card." },
+      { "name": "accent-glow", "value": "0 16px 32px -14px rgba(14,159,142,0.55)", "purpose": "Teal-tinted shadow under the accent CTA button." }
+    ],
+    "motion": [
+      { "name": "reveal", "value": "opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1)", "purpose": "Single authored scroll-reveal moment (translateY 18px to 0), respects prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "600px" },
+      { "name": "nav", "value": "860px" },
+      { "name": "md", "value": "960px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Highest-weight neutral CTA (ink fill); used alongside the accent CTA, e.g. hero secondary action.",
+      "html": "<button class=\"ds-btn-primary\">Оставить заявку</button>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:9px; border-radius:999px; font-family:'Inter',system-ui,sans-serif; font-weight:600; font-size:15px; padding:14px 26px; border:none; background:#0b1220; color:#fff; box-shadow:0 2px 8px -2px rgba(11,18,32,0.08),0 1px 3px rgba(11,18,32,0.06); transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease; cursor:pointer; } .ds-btn-primary:hover { background:#0b7f72; box-shadow:0 20px 40px -20px rgba(11,18,32,0.22),0 6px 16px -8px rgba(11,18,32,0.1); } .ds-btn-primary:focus-visible { outline:2px solid #0e9f8e; outline-offset:2px; } .ds-btn-primary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Accent Button",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "Primary high-intent CTA (teal fill with teal glow), e.g. nav/hero 'Оставить заявку'.",
+      "html": "<button class=\"ds-btn-accent\">Оставить заявку</button>",
+      "css": ".ds-btn-accent { display:inline-flex; align-items:center; justify-content:center; gap:9px; border-radius:999px; font-family:'Inter',system-ui,sans-serif; font-weight:600; font-size:15px; padding:14px 26px; border:none; background:#0e9f8e; color:#fff; box-shadow:0 16px 32px -14px rgba(14,159,142,0.55); transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease; cursor:pointer; } .ds-btn-accent:hover { background:#0b7f72; } .ds-btn-accent:focus-visible { outline:2px solid #0b1220; outline-offset:2px; } .ds-btn-accent:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Feature Card",
+      "kind": "card",
+      "refersTo": "feature-card",
+      "description": "Six-up capability grid card with a rounded-square pastel icon tile.",
+      "html": "<div class=\"ds-feature-card\"><div class=\"ds-feature-icon\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"/><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"/></svg></div><h3>Ученики и группы</h3><p>Карточки студентов, курсы и подписки в одном месте.</p></div>",
+      "css": ".ds-feature-card { background:#ffffff; border-radius:22px; border:1px solid rgba(11,18,32,0.08); padding:30px 26px; box-shadow:0 2px 8px -2px rgba(11,18,32,0.08),0 1px 3px rgba(11,18,32,0.06); transition:transform .2s ease, box-shadow .2s ease; font-family:'Inter',system-ui,sans-serif; } .ds-feature-card:hover { transform:translateY(-4px); box-shadow:0 20px 40px -20px rgba(11,18,32,0.22),0 6px 16px -8px rgba(11,18,32,0.1); } .ds-feature-icon { display:flex; align-items:center; justify-content:center; width:50px; height:50px; border-radius:15px; margin-bottom:20px; background:#e3f6f3; color:#0b7f72; } .ds-feature-icon svg { width:24px; height:24px; } .ds-feature-card h3 { font-family:'Unbounded',system-ui,sans-serif; font-size:18px; margin:0 0 9px; color:#0b1220; } .ds-feature-card p { font-size:14.5px; line-height:1.55; color:#475569; margin:0; }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "field-input",
+      "description": "Lead-form text input with uppercase micro-label.",
+      "html": "<div class=\"ds-field\"><label>Имя</label><input type=\"text\" placeholder=\"Ваше имя\" /></div>",
+      "css": ".ds-field { margin-bottom:16px; font-family:'Inter',system-ui,sans-serif; } .ds-field label { display:block; font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; color:#94a3b8; margin-bottom:7px; } .ds-field input { width:100%; box-sizing:border-box; font-size:15px; color:#0b1220; background:#f6f8f9; border:1.5px solid rgba(11,18,32,0.08); border-radius:12px; padding:13px 15px; outline:none; transition:border-color .15s ease, background-color .15s ease; } .ds-field input:focus { border-color:#0e9f8e; background:#fff; }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Sticky translucent-blur top nav with rounded-square ink brand mark.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><span class=\"ds-brand-mark\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M22 10v6M2 10l10-5 10 5-10 5-10-5z\"/></svg></span>e-Lesson</a><div class=\"ds-nav-links\"><a href=\"#\">Возможности</a><a href=\"#\">Как это работает</a><a href=\"#\">Вопросы</a></div><button class=\"ds-btn-accent\">Оставить заявку</button></nav>",
+      "css": ".ds-nav { position:sticky; top:0; display:flex; align-items:center; justify-content:space-between; height:76px; padding:0 24px; background:rgba(246,248,249,0.82); backdrop-filter:blur(14px); border-bottom:1px solid rgba(11,18,32,0.08); font-family:'Inter',system-ui,sans-serif; } .ds-brand { display:flex; align-items:center; gap:10px; text-decoration:none; font-family:'Unbounded',system-ui,sans-serif; font-weight:800; font-size:19px; color:#0b1220; } .ds-brand-mark { display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:11px; background:#0b1220; color:#fff; } .ds-nav-links { display:flex; align-items:center; gap:34px; } .ds-nav-links a { text-decoration:none; font-size:14.5px; font-weight:600; color:#475569; transition:color .15s ease; } .ds-nav-links a:hover { color:#0b1220; } .ds-nav-links a:focus-visible { outline:2px solid #0e9f8e; outline-offset:2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Operator's Real Screen",
+    "overview": "This world exists to sell one claim: the dashboard on screen is the real, running product, not a mockup. Every material choice reinforces that — real screenshots in browser-chrome frames, pastel icon tiles that read as a product's own iconography rather than stock-art, a dark near-black footer that frames the page the way a device frame would. It was built to sit between two named competitors (eduschool.uz's cooler cyan-teal restraint, my-school.uz's brighter grass-green playfulness) and lands on a single confident teal-emerald (#0e9f8e), deliberately on a cool-neutral ground rather than either competitor's warmer paper tones — a B2B dashboard subject, not a bookish one. Confirmed visual rejections, both corrected at finish review: no kicker/eyebrow pill above any heading (five were shipped, then all five removed), and no decorative section numbering (the FAQ's 01–05 was cut for the same reason). This system is scoped to marketing/home.php only; two other visual systems already live in this codebase for different jobs (the per-tenant customer template, and the /admin + /admin/super operate surfaces) and are out of scope here.",
+    "keyCharacteristics": [
+      "Single confident accent (teal-emerald) rather than a multi-brand rainbow",
+      "Cool-neutral ground, near-black ink, no warm/cream paper",
+      "Rounded-2xl white cards with soft diffuse (never hard-offset) shadow",
+      "Rounded-square pastel icon tiles, one hue per feature, drawn via Lucide SVGs",
+      "Pill-shaped buttons, badges, and chips throughout",
+      "Dark near-black-navy footer and two ink panels as the page's only dark surfaces",
+      "No kickers, no decorative numbering, Unbounded reserved strictly for display/headline use"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Teal-emerald is the only color used for interactive emphasis. The five pastel tile hues are decorative icon-background differentiators only and never carry interactive or brand meaning.", "section": "colors" },
+      { "name": "The Unbounded-Never-Body Rule", "body": "The display face appears only in h1-h4 selectors. No button, input, nav link, or paragraph is ever set in Unbounded.", "section": "typography" },
+      { "name": "The Soft-Offset-Only Rule", "body": "Every shadow in this world carries blur and a negative spread; zero-blur hard-offset shadows never appear — this is not a neobrutalist world.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Unbounded confined to headline-level elements; Inter carries every other role.",
+      "Do source real admin-panel screenshots (with provenance preserved) for any future product-proof media on this page; never substitute a generated or stock mockup for \"the real app.\"",
+      "Do rotate the five pastel tile hues for new feature cards rather than introducing a sixth hue or repeating one hue on adjacent cards.",
+      "Do use soft, blurred, offset shadows (ambient-small/medium/large) for all elevation; this is not a neobrutalist world.",
+      "Do keep this system scoped to marketing/home.php; new tenant-facing or /admin screens follow their own existing systems, not this one."
+    ],
+    "donts": [
+      "Don't add a kicker/eyebrow label above any heading on this page — confirmed removed at finish review (five instances cut), and the craft-floor ban applies regardless of future brief wording.",
+      "Don't add decorative section numbering (01/02/03-style) — the FAQ's was cut for the same reason; a sequence may only carry a number if the order itself is informationally necessary.",
+      "Don't introduce a second accent color competing with teal-emerald for interactive emphasis; the pastel tile hues are decorative-icon-only and must stay confined to that role.",
+      "Don't reach for a hard-offset, zero-blur shadow anywhere on this page.",
+      "Don't pull Quicksand/Font Awesome (the per-tenant template) or Space Grotesk (the admin/super operate surface) into this page's font or icon stack — three separate systems coexist in this codebase by design."
+    ]
+  }
+}
