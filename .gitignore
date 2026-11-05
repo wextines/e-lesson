@@ -1,0 +1,56 @@
+.env
+*.log
+receipts/
+profile/payments/receipts/
+__MACOSX/
+.DS_Store
+course_resources/
+other_resources/more_info/
+other_resources/project_results/
+bot_requests.log
+debug.log
+test-results/
+playwright-report/
+_archive/
+scratch/
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+build/
+
+# Test artifacts
+coverage/
+
+# Local environment
+.env.*
+!.env.example
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
+
+
+# Dependencies
+/node_modules/
+
+# User data and uploaded files
+/storage/*
+!/storage/.gitkeep
+/uploads/*
+!/uploads/.gitkeep
+
+# Build and test artifacts
+/dist/
+/build/
+/coverage/
+/playwright-report/
+/test-results/
+
+# Environment secrets
+.env.*
+!.env.example
+
